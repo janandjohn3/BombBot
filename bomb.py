@@ -3,14 +3,14 @@ bomb.py - Simple Willie bomb prank game
 Copyright 2012, Edward Powell http://embolalia.net
 Licensed under the Eiffel Forum License 2.
 
-http://willie.dfbta.net
+http://sopel.chat
 """
-from willie.module import commands
+from sopel.module import commands
 from random import choice, randint
 from re import search
 import sched
 import time
-from willie.tools import Identifier
+from sopel.tools import Identifier
 colors = ['Red', 'Yellow', 'Blue', 'White', 'Black']
 sch = sched.scheduler(time.time, time.sleep)
 fuse = 120  # seconds
@@ -58,7 +58,7 @@ def start(bot, trigger):
 @commands('cutwire')
 def cutwire(bot, trigger):
     """
-    Tells willie to cut a wire when you've been bombed.
+    Tells sopel to cut a wire when you've been bombed.
     """
     global bombs, colors
     target = Identifier(trigger.nick)
